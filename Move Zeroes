@@ -1,0 +1,30 @@
+public class Solution {
+    public void moveZeroes(int[] nums) {
+        int left = 0;
+        int right = 0;
+
+        while (right < nums.length) {
+            if (nums[right] != 0) {
+                nums[left] = nums[right];
+                left++;
+            }
+            right++;
+        }
+
+        while (left < nums.length) {
+            nums[left] = 0;
+            left++;
+        }
+    }
+}
+
+You can use the moveZeroes method as follows:
+
+public class Main {
+    public static void main(String[] args) {
+        int[] nums = {0, 1, 0, 3, 12};
+        Solution solution = new Solution();
+        solution.moveZeroes(nums);
+        System.out.println(Arrays.toString(nums));  // Output: [1, 3, 12, 0, 0]
+    }
+}
